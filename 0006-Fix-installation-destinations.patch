@@ -50,60 +50,60 @@ index ad1f34e..a2e188b 100644
  
  $(TOAST_INSTALL_BIN)/toast:	$(TOAST)
 +		mkdir -p $(TOAST_INSTALL_BIN)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $(TOAST) $@
  		chmod 755 $@
  
  $(TOAST_INSTALL_BIN)/untoast:	$(TOAST_INSTALL_BIN)/toast
 +		mkdir -p $(TOAST_INSTALL_BIN)
- 		-rm $@
- 		ln $? $@
+ 		-rm $(RMFLAGS) $@
+ 		$(LN) $? $@
  
  $(TOAST_INSTALL_BIN)/tcat:	$(TOAST_INSTALL_BIN)/toast
 +		mkdir -p $(TOAST_INSTALL_BIN)
- 		-rm $@
- 		ln $? $@
+ 		-rm $(RMFLAGS) $@
+ 		$(LN) $? $@
  
  $(TOAST_INSTALL_MAN)/toast.1:	$(MAN)/toast.1
 +		mkdir -p $(TOAST_INSTALL_MAN)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $? $@
  		chmod 444 $@
  
  $(GSM_INSTALL_MAN)/gsm.3:	$(MAN)/gsm.3
 +		mkdir -p $(GSM_INSTALL_MAN)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $? $@
  		chmod 444 $@
  
  $(GSM_INSTALL_MAN)/gsm_option.3:	$(MAN)/gsm_option.3
 +		mkdir -p $(GSM_INSTALL_MAN)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $? $@
  		chmod 444 $@
  
  $(GSM_INSTALL_MAN)/gsm_explode.3:	$(MAN)/gsm_explode.3
 +		mkdir -p $(GSM_INSTALL_MAN)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $? $@
  		chmod 444 $@
  
  $(GSM_INSTALL_MAN)/gsm_print.3:	$(MAN)/gsm_print.3
 +		mkdir -p $(GSM_INSTALL_MAN)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $? $@
  		chmod 444 $@
  
  $(GSM_INSTALL_INC)/gsm.h:	$(INC)/gsm.h
 +		mkdir -p $(GSM_INSTALL_INC)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
  		cp $? $@
  		chmod 444 $@
  
 -$(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
 +$(GSM_INSTALL_LIB)/libgsm.%:	$(LIB)/libgsm.%
 +		mkdir -p $(GSM_INSTALL_LIB)
- 		-rm $@
+ 		-rm $(RMFLAGS) $@
 -		cp $? $@
 +		cp -d $? $@
  		chmod 444 $@

@@ -16,7 +16,7 @@ index d5c0c90..ad1f34e 100644
  
  SHELL		= /bin/sh
 -LN		= ln
-+LN		= ln -s
++LN		= ln -sr
  BASENAME 	= basename
  AR		= ar
  ARFLAGS		= cr
@@ -76,7 +76,7 @@ index d5c0c90..ad1f34e 100644
 +			$(LIBGSMSO) $(LIB)/libgsm.so.1.0.18	\
 +			$(LIB)libgsm.so.1			\
 +			$(TOAST) $(TCAT) $(UNTOAST)		\
- 			$(ROOT)/gsm-1.0.tar.Z
+ 			$(ROOT)/gsm-1.0.tar.gz
  
  
 -- 
